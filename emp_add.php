@@ -1,0 +1,36 @@
+<?php
+include 'conn.php';
+?>
+<?php
+// Get the form data
+$user_id = $_POST['user_id'];
+$fname = $_POST['fname'];
+$lname = $_POST['lname'];
+$gender = $_POST['gender'];
+$birth = $_POST['birth'];
+$fac_id = $_POST['fac_id'];
+$rank = $_POST['rank'];
+$enroll = $_POST['enroll'];
+$phone = $_POST['phone'];
+$email = $_POST['email'];
+$address = $_POST['address'];
+// $fac_id = $_POST['fac']
+
+
+
+// Insert the data into the database
+$sql = "INSERT INTO employee (user_id, emp_fname, emp_lname,emp_gender, emp_birth, emp_phone, ra_id, emp_enroll, emp_email, emp_address,fac_id) 
+        VALUES ('$user_id', '$fname', '$lname', '$gender', '$birth','$phone', '$rank', '$enroll', '$email', '$address', '$fac_id')";
+$result = mysqli_query($conn, $sql);
+// echo "$result" ;
+if ($result) {
+    echo "<script>alert('บันทึกข้อมูลสำเร็จ');</script>";
+    echo "<script>window.location='Emp_addForm.php';</script>";
+} else {
+    echo "<script>alert('ไม่สามารถบันทึกข้อมูล!');</script>";
+    echo "<script>window.location='Emp_addForm.php';</script>";
+}
+
+// Close the database connection
+mysqli_close($conn);
+?>
