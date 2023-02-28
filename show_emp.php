@@ -99,7 +99,7 @@ include 'conn.php';
             </tbody>
         </table>
   
-        <a href="emp_addForm.php" class="btn btn-success" >เพิ่มข้อมูลอาจารย์</a>
+        <a href="Emp_addForm.php" class="btn btn-success" >เพิ่มข้อมูลอาจารย์</a>
 
 
     </div>
